@@ -4,21 +4,7 @@
  * Licensed under the MIT License:
  *   http://www.opensource.org/licenses/mit-license.php
  */
-
-// Global undefined variable
-window.undefined = window.undefined;
-
-/**
- * Create a new zCry Object
- * @constructor
- */
-zCry = function(){
-	
-}
-
-
-zCry.fn = zCry.prototype = {
-
+var EventUtil = {
 	addHandler: function(element,type,handler){
 		if (element.addEventListener) {
 			element.addEventListener(type,handler,false);
@@ -58,5 +44,3 @@ zCry.fn = zCry.prototype = {
 		}
 	}
 }
-
-window["zCry"] = zCry;
