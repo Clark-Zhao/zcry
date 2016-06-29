@@ -4,6 +4,33 @@
  * Licensed under the MIT License:
  *   http://www.opensource.org/licenses/mit-license.php
  */
+"use strict";
+//共享onload事件
+function addLoadEvent(fn){
+	var oldonload = window.onload;
+	if (typeof window.onload !== 'function') {
+		window.onload = fn;
+	}else {
+		window.onload = function(){
+			oldonload();
+			fn();
+		}
+	}
+}
+
+//insertAfter 兼容浏览器
+function insertAfter(newElement,targetElement){
+	var parent = targetElement.parentNode,
+		parentLast = parent.lastElementChild || parent.lastChild,
+		objNext = targetElement.nextElementSibling || targetElement.nextSibling;
+	if (targetElement === parentLast) {
+		parent.appendChild(newElement);
+	}else {
+		parent.insertBefore(newElement,objNext);
+	}
+}
+
+//事件监听兼容性处理
 var EventUtil = {
 	addHandler: function(element,type,handler){
 		if (element.addEventListener) {
@@ -42,5 +69,12 @@ var EventUtil = {
 		}else{
 			event.cancleBubble = true;
 		}
+	}
+}
+
+//用户输入验证
+var vaild = {
+	name: function(id){
+
 	}
 }
