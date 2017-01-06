@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>test</title>
-	<style type="text/css">
+  <meta charset="UTF-8">
+  <title>test</title>
+  <style type="text/css">
 
-	</style>
+  </style>
 </head>
 <body>
-	<script type="text/javascript" src="zcry.min.js"></script>
-	<script type="text/javascript">
-    loadScript("http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js",function(){console.log("hello");});
-	</script>
+  <script type="text/javascript" src="zcry.js"></script>
+  <script type="text/javascript">
+    zCry.loadScript("http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js",function(){console.log("hello");});
+    var $ = zCry;
+    $.ajax('post', 'http://api.zhaoyuxiang.cn/v1/posts', {page: 1, type: 'friend'})
+  </script>
 </body>
 </html>
