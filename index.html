@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <style type="text/css">
+
+  </style>
+</head>
+<body>
+  <script type="text/javascript" src="./dist/zCry.min.js"></script>
+  <script type="text/javascript">
+    zCry.ajax({
+      type: 'post',
+      url: 'http://api.zhaoyuxiang.cn/v1/posts',
+      data: {
+        limit: 1
+      },
+      success: function(res) {
+        console.log(res);
+      },
+      fail: function(res) {
+        console.log(res);
+      }
+    })
+
+
+    zCry.EventUtil.addHandler(document, 'click', function() {
+      console.log(1);
+    })
+  </script>
+</body>
+</html>
