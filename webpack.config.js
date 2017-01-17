@@ -5,7 +5,7 @@ module.exports = {
   entry: './index.js',
 
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, './dist'),
     filename: 'zCry.js',
     library: 'zCry',
     libraryTarget: 'umd'
@@ -32,7 +32,8 @@ module.exports = {
   },
 
   babel: {
-    presets: ['es2015']
+    presets: ['es2015', "stage-2"],
+    plugins: ["transform-runtime"]
   },
 
   eslint: {

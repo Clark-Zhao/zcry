@@ -1,5 +1,5 @@
 // 事件监听兼容性处理
-var EventUtil = {
+const EventUtil = {
 
   // 增加事件监听
   addHandler: function(element, type, handler) {
@@ -56,4 +56,4 @@ var EventUtil = {
   }
 };
 
-module.exports = EventUtil;
+export { EventUtil };

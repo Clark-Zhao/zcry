@@ -1,12 +1,13 @@
-var ajax = function(opt) {
-  var url = opt.url || '';
-  var type = opt.type || 'GET';
-  var data = opt.data || null;
-  var success = opt.success || function() {};
-  var fail = opt.fail || function() {};
+const ajax = function(opt) {
+  const url = opt.url || '';
+  const type = opt.type || 'GET';
+  const data = opt.data || null;
+  const success = opt.success || function() {};
+  const fail = opt.fail || function() {};
 
-  var xhr;
-  var res;
+  let xhr;
+  let res;
+  let params = [];
 
   if (window.XMLHttpRequest) {
     //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -18,9 +19,7 @@ var ajax = function(opt) {
   }
 
   if (data) {
-    var params = [];
-
-    for (var key in data) {
+    for (let key in data) {
       params.push(key + '=' + data[key]);
     }
     params = params.join('&');
@@ -49,4 +48,4 @@ var ajax = function(opt) {
   }
 };
 
-module.exports = ajax;
+export { ajax };

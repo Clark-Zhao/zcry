@@ -1,8 +1,8 @@
 // 共享onload事件
-var addLoadEvent = function(fn) {
-  var oldonload = window.onload;
+const addLoadEvent = function(fn) {
+  const oldonload = window.onload;
 
-  if (typeof window.onload !== 'function') {
+  if (typeof oldonload !== 'function') {
     window.onload = fn;
   }
   else {
@@ -13,4 +13,4 @@ var addLoadEvent = function(fn) {
   }
 };
 
-module.exports = addLoadEvent;
+export { addLoadEvent };

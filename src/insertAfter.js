@@ -1,6 +1,6 @@
 // insertAfter 兼容浏览器
-var insertAfter = function(newElement,targetElement) {
-  var parent = targetElement.parentNode,
+const insertAfter = function(newElement, targetElement) {
+  const parent = targetElement.parentNode,
     parentLast = parent.lastElementChild || parent.lastChild,
     objNext = targetElement.nextElementSibling || targetElement.nextSibling;
 
@@ -8,8 +8,8 @@ var insertAfter = function(newElement,targetElement) {
     parent.appendChild(newElement);
   }
   else {
-    parent.insertBefore(newElement,objNext);
+    parent.insertBefore(newElement, objNext);
   }
 };
 
-module.exports = insertAfter;
+export { insertAfter };

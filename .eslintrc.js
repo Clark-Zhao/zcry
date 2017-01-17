@@ -6,6 +6,7 @@ module.exports = {
         "node": true
     },
     "parserOptions": {
+        "ecmaVersion": 8,
         "ecmaFeatures": {
             "jsx": true,
             "impliedStrict": true  // 启用全局严格模式
@@ -161,10 +162,10 @@ module.exports = {
 
         // ------ES6------
 
-        // // 要求使用 let 或 const 而不是 var
-        // "no-var": 2,
-        //
-        // // 不允许改变用const声明的变量
-        // "no-const-assign": 2
+        // 要求使用 let 或 const 而不是 var
+        "no-var": 2,
+
+        // 不允许改变用const声明的变量
+        "no-const-assign": 2
     }
 };
